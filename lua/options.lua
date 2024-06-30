@@ -20,4 +20,4 @@ vim.o.nu = true
 vim.o.wrap = false
 
 -- Disable mouse, because that's bullshit in tui
-vim.o.mouse = false
+vim.o.mouse = ""
