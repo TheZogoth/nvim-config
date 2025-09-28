@@ -1,12 +1,8 @@
-local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-end
-
 return {
   "neovim/nvim-lspconfig",
-  config= function()
-    local lspconfig = require'lspconfig'
-    lspconfig.clangd.setup{
+  config = function()
+    vim.lsp.enable('clangd')
+    vim.lsp.config('clangd', {
       cmd = {
         'clangd',
         '--all-scopes-completion',
@@ -17,22 +13,19 @@ return {
         '-j=6'
       },
       filetypes = {'c', 'cpp', 'cuda'},
-      on_attach = on_attach,
-      root_dir = function(filename)
-        local lspc_util = require('lspconfig.util')
-        return lspc_util.root_pattern('.git')(filename)
-      end
-    }
-    lspconfig.ols.setup{
+      -- on_attach = function(client, bufnr)
+      --   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+      -- end,
+    })
+    vim.lsp.enable('ols')
+    vim.lsp.config('ols', {
       cmd = {
         'ols'
       },
       filetypes = {'odin'},
-      on_attach = on_attach,
-      root_dir = function(filename)
-        local lspc_util = require('lspconfig.util')
-        return lspc_util.root_pattern('.git')(filename)
-      end
-    }
+      -- on_attach = function(client, bufnr)
+      --   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+      -- end,
+    })
   end
 }

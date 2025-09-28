@@ -40,4 +40,4 @@ located in lua/plugins.
   Dependencies:
   * 'nvim-lua/plenary.nvim'
 
-[//]: # vi: ts=2 sw=2 sts=2 tw=80 et
+[//]: <> ( vi:se ts=2 sw=2 sts=2 tw=80 et: )

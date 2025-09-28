@@ -21,3 +21,6 @@ vim.o.wrap = false
 
 -- Disable mouse, because that's bullshit in tui
 vim.o.mouse = ""
+
+-- Single line border around all windows
+vim.o.winborder = 'single'
