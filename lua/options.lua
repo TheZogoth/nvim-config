@@ -24,3 +24,6 @@ vim.o.mouse = ""
 
 -- Single line border around all windows
 vim.o.winborder = 'single'
+
+-- Enable wl-clipboard in wayland for ctrl-c/ctrl-v operations
+vim.g.clipboard = 'wl-copy'
