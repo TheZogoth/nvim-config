@@ -55,6 +55,11 @@ vim.keymap.set(
   'gimpl',
   vim.lsp.buf.implementation,
   { noremap = true, silent = true, desc = "Go to implementation" })
+vim.keymap.set(
+  'n',
+  'glr',
+  vim.lsp.buf.references,
+  { noremap = true, silent = true, desc = "List references" })
 
 -- Diagnostics
 vim.keymap.set(
